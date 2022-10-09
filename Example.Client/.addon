@@ -1,0 +1,34 @@
+{
+  "Title": "Example.Client",
+  "Type": "game",
+  "Org": "local",
+  "Ident": "example_client",
+  "Schema": 1,
+  "HasAssets": true,
+  "AssetsPath": "",
+  "ResourcePaths": [],
+  "HasCode": true,
+  "CodePath": "/code/",
+  "RootNamespace": null,
+  "Metadata": {
+    "MaxPlayers": 1,
+    "MinPlayers": 1,
+    "GameNetworkType": "Custom",
+    "MapSelect": "Unrestricted",
+    "MapList": [],
+    "RankType": "None",
+    "PerMapRanking": false,
+    "LeaderboardType": "None",
+    "ProjectTemplate": null,
+    "GameCategory": "TechDemos",
+    "Compiler": {
+      "RootNamespace": "NetBolt.Client",
+      "DefineConstants": "SANDBOX;ADDON;DEBUG",
+      "NoWarn": "1701;1702;1591;",
+      "Nullables": true
+    },
+    "ControlModes": {
+      "Keyboard": true
+    }
+  }
+}

@@ -1,0 +1,25 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net6.0</TargetFramework>
+        <Nullable>enable</Nullable>
+        <RootNamespace>NetBolt.WebSocketServer</RootNamespace>
+        <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+
+        <Title>NetBolt.WebSocketServer</Title>
+        <Description>A web socket server implementation geared towards game servers and S&amp;box.</Description>
+        <Authors>peter-r-g</Authors>
+        <PackageIcon>icon.png</PackageIcon>
+        <PackageTags>Networking S&amp;box</PackageTags>
+        <RepositoryType>git</RepositoryType>
+        <RepositoryUrl>https://github.com/Sbox-NetBolt/NetBolt.WebSocketServer</RepositoryUrl>
+        <PackageProjectUrl>https://github.com/Sbox-NetBolt/NetBolt.WebSocketServer</PackageProjectUrl>
+        <PackageLicenseFile>LICENSE.md</PackageLicenseFile>
+    </PropertyGroup>
+    
+    <ItemGroup>
+        <None Include="../LICENSE.md" Pack="true" PackagePath=""/>
+        <None Include="../icon.png" Pack="true" PackagePath=""/>
+    </ItemGroup>
+
+</Project>
