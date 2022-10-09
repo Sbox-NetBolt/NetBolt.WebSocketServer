@@ -12,9 +12,9 @@ internal static class WebSocketDisconnectReasonExtensions
 	/// Converts a <see cref="WebSocketDisconnectReason"/> to a valid <see cref="WebSocketCloseCode"/>.
 	/// </summary>
 	/// <param name="reason">The reason to convert.</param>
-	/// <param name="error">The error that is associated with <see cref="reason"/>.</param>
+	/// <param name="error">The error that is associated with <see ref="reason"/>.</param>
 	/// <returns>The converted close code.</returns>
-	/// <exception cref="ArgumentOutOfRangeException">Thrown when the <see cref="reason"/> passed is invalid.</exception>
+	/// <exception cref="ArgumentOutOfRangeException">Thrown when the <see ref="reason"/> passed is invalid.</exception>
 	internal static WebSocketCloseCode GetCloseCode( this WebSocketDisconnectReason reason, WebSocketError? error = null )
 	{
 		switch ( reason )
