@@ -24,7 +24,7 @@ public interface IReadOnlyWebSocketServerOptions
 	/// </summary>
 	public IReadOnlyPingOptions ReadOnlyAutoPing { get; }
 	/// <summary>
-	/// See <see cref="WebSocketServerOptions.AutoPing"/>.
+	/// See <see cref="WebSocketServerOptions.Messaging"/>.
 	/// </summary>
 	public IReadOnlyMessageOptions ReadOnlyMessaging { get; }
 }

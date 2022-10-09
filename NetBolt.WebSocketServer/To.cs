@@ -95,6 +95,10 @@ public readonly struct To : IEnumerable<IWebSocketClient>
 		return AllExcept( server, clientsToIgnore as IEnumerable<IWebSocketClient> );
 	}
 
+	/// <summary>
+	/// Returns an enumerator that iterates through the collection.
+	/// </summary>
+	/// <returns>An enumerator that can be used to iterate through the collection.</returns>
 	public IEnumerator<IWebSocketClient> GetEnumerator()
 	{
 		if ( _singleClient is not null )

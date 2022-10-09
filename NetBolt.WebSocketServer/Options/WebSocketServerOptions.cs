@@ -30,14 +30,23 @@ public sealed class WebSocketServerOptions : IReadOnlyWebSocketServerOptions
 	/// Ping options for automatic pinging of clients in the server.
 	/// </summary>
 	public PingOptions AutoPing { get; }
+	/// <summary>
+	/// A read-only version of <see cref="AutoPing"/>.
+	/// </summary>
 	public IReadOnlyPingOptions ReadOnlyAutoPing => AutoPing;
 
 	/// <summary>
 	/// Options for limiting messages and their construction.
 	/// </summary>
 	public MessageOptions Messaging { get; }
+	/// <summary>
+	/// A read-only version of <see cref="Messaging"/>.
+	/// </summary>
 	public IReadOnlyMessageOptions ReadOnlyMessaging => Messaging;
 
+	/// <summary>
+	/// Initializes a default instance of <see cref="WebSocketServerOptions"/>.
+	/// </summary>
 	public WebSocketServerOptions()
 	{
 		AutoPing = new PingOptions( this );

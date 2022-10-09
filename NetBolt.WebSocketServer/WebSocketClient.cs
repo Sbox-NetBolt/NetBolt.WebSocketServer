@@ -89,6 +89,11 @@ public class WebSocketClient : IWebSocketClient, IDisposable, IAsyncDisposable
 	/// </summary>
 	private bool _disconnecting;
 
+	/// <summary>
+	/// Initializes a new instance of <see cref="WebSocketClient"/> with its underlying socket and the server it is a part of.
+	/// </summary>
+	/// <param name="socket">The underlying socket of the client.</param>
+	/// <param name="server">The server that this client is a part of.</param>
 	public WebSocketClient( TcpClient socket, IWebSocketServer server )
 	{
 		_socket = socket;
@@ -191,6 +196,10 @@ public class WebSocketClient : IWebSocketClient, IDisposable, IAsyncDisposable
 		QueueSend( WebSocketOpCode.Text, Encoding.UTF8.GetBytes( message ) );
 	}
 
+	/// <summary>
+	/// Returns a string that represents the <see cref="WebSocketClient"/>.
+	/// </summary>
+	/// <returns>A string that represents the <see cref="WebSocketClient"/>.</returns>
 	public override string ToString()
 	{
 		var sb = new StringBuilder();
@@ -210,12 +219,19 @@ public class WebSocketClient : IWebSocketClient, IDisposable, IAsyncDisposable
 		return sb.ToString();
 	}
 
+	/// <summary>
+	/// Performs application-defined tasks associated with freeing, releasing, or resetting unmanaged resources.
+	/// </summary>
 	public virtual void Dispose()
 	{
 		GC.SuppressFinalize( this );
 		DisconnectAsync().Wait();
 	}
 
+	/// <summary>
+	/// Performs application-defined tasks associated with freeing, releasing, or resetting unmanaged resources asynchronously.
+	/// </summary>
+	/// <returns>A task that represents the asynchronous dispose operation.</returns>
 	public virtual async ValueTask DisposeAsync()
 	{
 		GC.SuppressFinalize( this );

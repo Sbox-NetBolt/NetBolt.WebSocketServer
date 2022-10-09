@@ -11,7 +11,7 @@ internal static class WebSocketThrowHelper
 	/// Checks and throws if a <see cref="IWebSocketClient"/> is connected.
 	/// </summary>
 	/// <param name="client">The <see cref="IWebSocketClient"/> to check if it is connected.</param>
-	/// <exception cref="ClientConnectedException">Thrown if the <see cref="client"/> is connected.</exception>
+	/// <exception cref="ClientConnectedException">Thrown if the <see ref="client"/> is connected.</exception>
 	internal static void ThrowIfConnected( this IWebSocketClient client )
 	{
 		if ( client.Connected )
@@ -22,7 +22,7 @@ internal static class WebSocketThrowHelper
 	/// Checks and throws if a <see cref="IWebSocketClient"/> is disconnected.
 	/// </summary>
 	/// <param name="client">The <see cref="IWebSocketClient"/> to check if it is disconnected.</param>
-	/// <exception cref="ClientDisconnectedException">Thrown if the <see cref="client"/> is disconnected.</exception>
+	/// <exception cref="ClientDisconnectedException">Thrown if the <see ref="client"/> is disconnected.</exception>
 	internal static void ThrowIfDisconnected( this IWebSocketClient client )
 	{
 		if ( !client.Connected )
@@ -33,7 +33,7 @@ internal static class WebSocketThrowHelper
 	/// Checks and throws if a <see cref="IWebSocketServer"/> is running.
 	/// </summary>
 	/// <param name="server">The <see cref="IWebSocketServer"/> to check if it is running.</param>
-	/// <exception cref="ServerRunningException">Thrown if the <see cref="server"/> is running.</exception>
+	/// <exception cref="ServerRunningException">Thrown if the <see ref="server"/> is running.</exception>
 	internal static void ThrowIfRunning( this IWebSocketServer server )
 	{
 		if ( server.Running )
@@ -44,7 +44,7 @@ internal static class WebSocketThrowHelper
 	/// Checks and throws if a <see cref="IWebSocketServer"/> is not running.
 	/// </summary>
 	/// <param name="server">The <see cref="IWebSocketServer"/> to check if it is not running.</param>
-	/// <exception cref="ServerNotRunningException">Thrown if the <see cref="server"/> is not running.</exception>
+	/// <exception cref="ServerNotRunningException">Thrown if the <see ref="server"/> is not running.</exception>
 	internal static void ThrowIfNotRunning( this IWebSocketServer server )
 	{
 		if ( !server.Running )

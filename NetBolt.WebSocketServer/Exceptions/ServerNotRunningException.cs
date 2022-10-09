@@ -5,6 +5,9 @@
 /// </summary>
 public sealed class ServerNotRunningException : WebSocketException
 {
+	/// <summary>
+	/// Initializes a new instance of the <see cref="ServerNotRunningException"/> class.
+	/// </summary>
 	public ServerNotRunningException() : base( "Server is not running" )
 	{
 	}

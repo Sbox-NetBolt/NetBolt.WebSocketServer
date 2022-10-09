@@ -59,6 +59,10 @@ public class WebSocketServer : IWebSocketServer, IDisposable, IAsyncDisposable
 	/// </summary>
 	private readonly Dictionary<IWebSocketClient, Task> _clientTasks = new();
 
+	/// <summary>
+	/// Initializes a new instance of <see cref="WebSocketServer"/> with the provided configuration.
+	/// </summary>
+	/// <param name="options">The configuration for the server.</param>
 	public WebSocketServer( IReadOnlyWebSocketServerOptions options )
 	{
 		Options = options;
@@ -232,6 +236,10 @@ public class WebSocketServer : IWebSocketServer, IDisposable, IAsyncDisposable
 			client.QueueSend( message );
 	}
 
+	/// <summary>
+	/// Returns a string that represents the <see cref="WebSocketServer"/>.
+	/// </summary>
+	/// <returns>A string that represents the <see cref="WebSocketServer"/>.</returns>
 	public override string ToString()
 	{
 		var sb = new StringBuilder();
@@ -253,12 +261,19 @@ public class WebSocketServer : IWebSocketServer, IDisposable, IAsyncDisposable
 		return sb.ToString();
 	}
 
+	/// <summary>
+	/// Performs application-defined tasks associated with freeing, releasing, or resetting unmanaged resources.
+	/// </summary>
 	public virtual void Dispose()
 	{
 		GC.SuppressFinalize( this );
 		StopAsync().Wait();
 	}
 
+	/// <summary>
+	/// Performs application-defined tasks associated with freeing, releasing, or resetting unmanaged resources asynchronously.
+	/// </summary>
+	/// <returns>A task that represents the asynchronous dispose operation.</returns>
 	public virtual async ValueTask DisposeAsync()
 	{
 		GC.SuppressFinalize( this );

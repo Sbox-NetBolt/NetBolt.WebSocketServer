@@ -103,7 +103,7 @@ public sealed class WebSocketFrame
 	/// Formats a <see cref="WebSocketOpCode.Close"/> message data.
 	/// </summary>
 	/// <param name="reason">The reason for the disconnect.</param>
-	/// <param name="wordReason">A string version of <see cref="reason"/>.</param>
+	/// <param name="wordReason">A string version of <see ref="reason"/>.</param>
 	/// <returns>The formatted close message data.</returns>
 	[Pure]
 	public static ReadOnlyMemory<byte> FormatCloseData( WebSocketDisconnectReason reason, string wordReason = "" )

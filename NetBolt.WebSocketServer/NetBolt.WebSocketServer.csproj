@@ -5,6 +5,7 @@
         <Nullable>enable</Nullable>
         <RootNamespace>NetBolt.WebSocketServer</RootNamespace>
         <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+        <GenerateDocumentationFile>true</GenerateDocumentationFile>
 
         <Title>NetBolt.WebSocketServer</Title>
         <Description>A web socket server implementation geared towards game servers and S&amp;box.</Description>

@@ -11,7 +11,7 @@ internal static class SpanByteExtensions
 	/// Sets a single byte.
 	/// </summary>
 	/// <param name="bytes">The bytes to modify.</param>
-	/// <param name="offset">The offset into the <see cref="bytes"/> span to set the <see cref="value"/>.</param>
+	/// <param name="offset">The offset into the <see ref="bytes"/> span to set the <see ref="value"/>.</param>
 	/// <param name="value">The value to set.</param>
 	internal static void Set( this Span<byte> bytes, int offset, byte value )
 	{
@@ -22,7 +22,7 @@ internal static class SpanByteExtensions
 	/// Sets an unsigned short.
 	/// </summary>
 	/// <param name="bytes">The bytes to modify.</param>
-	/// <param name="offset">The offset into the <see cref="bytes"/> span to set the <see cref="value"/>.</param>
+	/// <param name="offset">The offset into the <see ref="bytes"/> span to set the <see ref="value"/>.</param>
 	/// <param name="value">The value to set.</param>
 	internal static void Set( this Span<byte> bytes, int offset, ushort value )
 	{
@@ -34,7 +34,7 @@ internal static class SpanByteExtensions
 	/// Sets an unsigned long.
 	/// </summary>
 	/// <param name="bytes">The bytes to modify.</param>
-	/// <param name="offset">The offset into the <see cref="bytes"/> span to set the <see cref="value"/>.</param>
+	/// <param name="offset">The offset into the <see ref="bytes"/> span to set the <see ref="value"/>.</param>
 	/// <param name="value">The value to set.</param>
 	internal static void Set( this Span<byte> bytes, int offset, ulong value )
 	{
