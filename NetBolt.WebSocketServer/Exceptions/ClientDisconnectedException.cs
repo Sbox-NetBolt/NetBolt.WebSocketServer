@@ -9,7 +9,7 @@ public sealed class ClientDisconnectedException : WebSocketException
 	/// The <see cref="IWebSocketClient"/> that is disconnected.
 	/// </summary>
 	public IWebSocketClient Client { get; }
-	
+
 	/// <summary>
 	/// Initializes a new instance of the <see cref="ClientDisconnectedException"/> class with the client that caused the exception.
 	/// </summary>

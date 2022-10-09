@@ -10,7 +10,7 @@ public static class Program
 {
 	// Config constants
 	private const bool UseDefault = true;
-	
+
 	private const string Ip = "127.0.0.1";
 	private const int Port = 9987;
 	private const string DisconnectPhrase = "disconnect";

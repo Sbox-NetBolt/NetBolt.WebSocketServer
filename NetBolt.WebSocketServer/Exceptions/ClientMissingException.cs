@@ -13,7 +13,7 @@ public sealed class ClientMissingException : WebSocketException
 	/// The <see cref="IWebSocketClient"/> that was used.
 	/// </summary>
 	public IWebSocketClient Client { get; }
-	
+
 	/// <summary>
 	/// Initializes a new instance of the <see cref="ClientMissingException"/> class with the server and client that caused the exception.
 	/// </summary>

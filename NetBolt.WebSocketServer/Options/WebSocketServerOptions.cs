@@ -12,7 +12,7 @@ public sealed class WebSocketServerOptions : IReadOnlyWebSocketServerOptions
 	/// Creates a default instance of <see cref="WebSocketServerOptions"/>.
 	/// </summary>
 	public static WebSocketServerOptions Default => new();
-	
+
 	/// <summary>
 	/// The IP address the web socket server should bind to.
 	/// </summary>
