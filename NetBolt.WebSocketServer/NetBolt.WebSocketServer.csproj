@@ -16,6 +16,7 @@
         <RepositoryUrl>https://github.com/Sbox-NetBolt/NetBolt.WebSocketServer</RepositoryUrl>
         <PackageProjectUrl>https://github.com/Sbox-NetBolt/NetBolt.WebSocketServer</PackageProjectUrl>
         <PackageLicenseFile>LICENSE.md</PackageLicenseFile>
+        <PackageVersion>1.0.1</PackageVersion>
     </PropertyGroup>
     
     <ItemGroup>
