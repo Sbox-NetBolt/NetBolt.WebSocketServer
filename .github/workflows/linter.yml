@@ -6,25 +6,24 @@ name: Lint Code Base
 
 on:
   push:
-    branches-ignore: [master]
+    branches: [master]
   pull_request:
     branches: [master]
 
 jobs:
   check-format:
-    runs-on: windows-latest
+    name: Lint Code Base
+    runs-on: ubuntu-latest
 
     steps:
-      - name: Setup .NET Core
-        uses: actions/setup-dotnet@v1.8.2
-        with:
-          dotnet-version: '6.0.x'
-
-      - name: Install dotnet-format tool
-        run: dotnet tool install -g dotnet-format
-
       - name: Checkout Code
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
 
-      - name: Run dotnet format
-        run: dotnet format --verbosity diagnostic
+      - name: Lint Code Base
+        uses: github/super-linter@4.9.7
+        env:
+          VALIDATE_ALL_CODEBASE: true
+          DEFAULT_BRANCH: master
+        
