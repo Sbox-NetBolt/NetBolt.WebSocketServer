@@ -9,7 +9,7 @@ namespace Example.Server;
 public static class Program
 {
 	// Config constants
-	private const bool UseDefault = true;
+	private const bool UseDefault = false;
 
 	private const string Ip = "127.0.0.1";
 	private const int Port = 9987;
@@ -44,7 +44,7 @@ public static class Program
 		// Create and start server
 		_server = new ExampleServer( config );
 		_server.Start();
-		Console.WriteLine( "Server started on {0}:{1}", Ip, Port );
+		Console.WriteLine( "Server started on {0}:{1}", config.IpAddress, config.Port );
 
 		// Shut down server cleanly when exiting
 		AppDomain.CurrentDomain.ProcessExit += OnProcessExit;
@@ -53,40 +53,45 @@ public static class Program
 		var shouldExit = false;
 		while ( !shouldExit )
 		{
-			Console.WriteLine( "Press [ENTER] to close" );
 			Console.WriteLine( "Press 1 to send a text message to everyone" );
 			Console.WriteLine( "Press 2 to send a binary message to everyone" );
 			Console.WriteLine( "Press 3 to send a massive binary message to everyone" );
 			Console.WriteLine( "Press 4 to disconnect all clients" );
+			Console.WriteLine( "Press anything else to close" );
 
 			var result = Console.ReadLine();
 			switch ( result )
 			{
+				// Send "Hello, World!" to everyone as a text message
 				case "1":
 					_server.QueueSend( To.All( _server ), "Hello, World!" );
 					break;
+				// Send "Hello, World!" to everyone as a binary message
 				case "2":
 					_server.QueueSend( To.All( _server ), Encoding.UTF8.GetBytes( "Hello, World!" ) );
 					break;
+				// Send 32768 bytes (32KB) of data to everyone as a binary message
 				case "3":
-					_server.QueueSend( To.All( _server ), new byte[16384 * 2] );
+					_server.QueueSend( To.All( _server ), new byte[32768] );
 					break;
+				// Disconnect everyone in the server
 				case "4":
 					foreach ( var client in _server.Clients )
 						_ = client.DisconnectAsync( WebSocketDisconnectReason.Requested, "Manual disconnect from the server" );
 					break;
+				// Exit
 				default:
 					shouldExit = true;
 					break;
 			}
 		}
 
-		// Shut down cleanly
 		Console.WriteLine( "Shutting down..." );
-		AppDomain.CurrentDomain.ProcessExit -= OnProcessExit;
-		_server.StopAsync().Wait();
 	}
 
+	/// <summary>
+	/// Shuts down the server on process exit.
+	/// </summary>
 	private static void OnProcessExit( object? sender, EventArgs eventArgs )
 	{
 		_server.StopAsync().Wait();
